@@ -2,7 +2,7 @@
   "name": "Clicktrans support",
   "description": "Support for simulations",
   "version": "1.0",
-  "manifest_version": 1,
+  "manifest_version": 3,
   "action": {
     "default_popup": "main.html",
     "default_icon": "action.png"
