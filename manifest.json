@@ -6,9 +6,5 @@
   "action": {
     "default_popup": "main.html",
     "default_icon": "action.png"
-  },
-  "content_scripts" : [
-    {"matches" : [{"https://clicktrans.pl/*"}]
-    }
-  ]
+  }
 }
