@@ -24,7 +24,7 @@ let numberOfPlaces = weightValue / singlePlaceLimit;
 numberOfPlaces = Math.ceil(numberOfPlaces);
 
 // Comment : Calculate price
-const pricePerKmEUR = 0,8;
+const pricePerKmEUR = 0.8;
 const shippingPrice = numberOfPlaces * pricePerKmEUR * distanceValue;
 
 console.log("Simulated Price");
