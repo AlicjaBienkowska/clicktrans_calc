@@ -1,7 +1,11 @@
 // Comment : Get page content 
-const weightText = document.getElementsByClassName("weight")[0].innerText;
-const amountText = document.getElementsByClassName("amount")[0].innerText;
-const distanceText = document.getElementsByClassName("distance")[0].children[1].innerText;
+// const weightText = document.getElementsByClassName("weight")[0].innerText;
+// const amountText = document.getElementsByClassName("amount")[0].innerText;
+// const distanceText = document.getElementsByClassName("distance")[0].children[1].innerText;
+
+const weightText = "ok. 1030 kg";
+const amountText = "2";
+const distanceText = "635 km";
 
 // Comment : Convert weight to value
 // Comment : Remove letters
@@ -22,3 +26,6 @@ numberOfPlaces = Math.ceil(numberOfPlaces);
 // Comment : Calculate price
 const pricePerKmEUR = 0,8;
 const shippingPrice = numberOfPlaces * pricePerKmEUR * distanceValue;
+
+console.log("Simulated Price");
+console.log(shippingPrice)
