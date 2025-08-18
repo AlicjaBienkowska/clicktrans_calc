@@ -8,44 +8,10 @@
   <input type="number" id="rateRame" name="rateRame" value=0.8 min=0><br><br>
   <label for="weightName">Car multiplier KG:</label>
   <input type="number" id="weightName" name="weightName" value=1400 min=0><br><br>
-  <input type="submit" value="Calculate" onclick="myFunction()>
+  <input type="submit" value="Calculate">
 </form>
 
-<script>
-function myFunction() {
-  // Comment : Get page content 
-// const weightText = document.getElementsByClassName("weight")[0].innerText;
-// const amountText = document.getElementsByClassName("amount")[0].innerText;
-// const distanceText = document.getElementsByClassName("distance")[0].children[1].innerText;
-
-const weightText = "ok. 1030 kg";
-const amountText = "2";
-const distanceText = "635 km";
-
-// Comment : Convert weight to value
-// Comment : Remove letters
-let weightValue = weightText.replace(/\D/g,'');
-// Comment : Remove spaces
-weightValue = weightValue.replace(/\s/g, '');
-weightValue = Number(weightValue);
-
-let amountValue = Number(amountText);
-
-let distanceValue = Number(distanceText);
-
-// Comment : Calculate number of places on transport truck for calculation
-const singlePlaceLimit = 1400;
-let numberOfPlaces = weightValue / singlePlaceLimit;
-numberOfPlaces = Math.ceil(numberOfPlaces);
-
-// Comment : Calculate price
-const pricePerKmEUR = 0.8;
-const shippingPrice = numberOfPlaces * pricePerKmEUR * distanceValue;
-
-console.log("Simulated Price");
-console.log(shippingPrice)
-}
-</script>
+<script src="popup.js"></script>
     
   </body>
 </html>
