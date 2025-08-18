@@ -33,4 +33,3 @@ const shippingPrice = Math.round(numberOfPlaces * pricePerKmEUR * distanceValue)
 console.log("Simulated Price");
 console.log(shippingPrice)
 
-document.getElementById("weight")[0].innerText;
