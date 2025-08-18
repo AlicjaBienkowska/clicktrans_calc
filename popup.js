@@ -8,15 +8,18 @@ const amountText = "2";
 const distanceText = "635 km";
 
 // Comment : Convert weight to value
-// Comment : Remove letters
+// Comment : Remove letters and spaces
 let weightValue = weightText.replace(/\D/g,'');
-// Comment : Remove spaces
 weightValue = weightValue.replace(/\s/g, '');
 weightValue = Number(weightValue);
 
-let amountValue = Number(amountText);
+let amountValue = amountText.replace(/\D/g,'');
+amountValue = amountValue.replace(/\s/g, '');
+amountValue = Number(amountValue);
 
-let distanceValue = Number(distanceText);
+let distanceValue = distanceText.replace(/\D/g,'');
+distanceValue = distanceValue.replace(/\s/g, '');
+distanceValue = Number(distanceValue);
 
 // Comment : Calculate number of places on transport truck for calculation
 const singlePlaceLimit = 1400;
