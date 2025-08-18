@@ -1,1 +1,24 @@
-console.log('This is a popup!');
+// Comment : Get page content 
+const weightText = document.getElementsByClassName("weight")[0].innerText;
+const amountText = document.getElementsByClassName("amount")[0].innerText;
+const distanceText = document.getElementsByClassName("distance")[0].children[1].innerText;
+
+// Comment : Convert weight to value
+// Comment : Remove letters
+let weightValue = weightText.replace(/\D/g,'');
+// Comment : Remove spaces
+weightValue = weightValue.replace(/\s/g, '');
+weightValue = Number(weightValue);
+
+let amountValue = Number(amountText);
+
+let distanceValue = Number(distanceText);
+
+// Comment : Calculate number of places on transport truck for calculation
+const singlePlaceLimit = 1400;
+let numberOfPlaces = weightValue / singlePlaceLimit;
+numberOfPlaces = Math.ceil(numberOfPlaces);
+
+// Comment : Calculate price
+const pricePerKmEUR = 0,8;
+const shippingPrice = numberOfPlaces * pricePerKmEUR * distanceValue;
