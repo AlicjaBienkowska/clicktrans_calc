@@ -27,5 +27,7 @@ numberOfPlaces = Math.ceil(numberOfPlaces);
 const pricePerKmEUR = 0.8;
 const shippingPrice = numberOfPlaces * pricePerKmEUR * distanceValue;
 
+debugger
+
 console.log("Simulated Price");
 console.log(shippingPrice)
