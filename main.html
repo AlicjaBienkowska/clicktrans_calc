@@ -1,18 +1,82 @@
 <html>
-  <body>
-    <h1>Clictrans</h1>
-    <p>Pricing support</p>
 
-<form>
-  <label for="rateName">Rate EUR:</label>
-  <input type="number" id="rateRame" name="rateRame" value=0.8 min=0><br><br>
-  <label for="weightName">Car multiplier KG:</label>
-  <input type="number" id="weightName" name="weightName" value=1400 min=0><br><br>
-</form>
+<body>
 
-<button type="button">Simulate price</button>
+  <style>
+    .hbox {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start;
+      padding: 3px;
+    }
 
-<script src="popup.js"></script>
-    
-  </body>
+    .vbox {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      /*Align children vetically*/
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start;
+    }
+
+    .formEntry {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      margin: 10px;
+      width: 120px;
+    }
+
+    .input {
+      width: 120px;
+      margin-left: 10px;
+    }
+  </style>
+
+  <h1>Clictrans</h1>
+  <p>Pricing support</p>
+
+  <div class="vbox" name="vboxEntry">
+    <div class="hbox" name="hboxRate">
+      <text>Rate [EUR]:</text>
+      <input class="input" type="number" name="rateRame" value=0.8 min=0</input>
+    </div>
+    <div class="hbox" name="hboxWeight">
+      <text>Rate [EUR]:</text>
+      <input class="input" type="number" name="weightName" value=1400 min=0</input>
+    </div>
+    <button class="button">Calculate</button>
+  </div>
+
+  <div class="vbox" name="Output">
+    <div class="hbox" name="shipPriceMin">
+      <text>Min (-20%)</text>
+      <input class="input" type="text" name="inputShipPriceMin" </input>
+    </div>
+    <div class="hbox" name="shipPriceCalc">
+      <text>Calculated</text>
+      <input class="input" type="text" name="inputShipPriceCalc" </input>
+    </div>
+    <div class="hbox" name="shipPriceMax">
+      <text>Max (+20%)</text>
+      <input class="input" type="text" name="inputShipPriceMax" </input>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+
+</body>
+
 </html>
