@@ -4,57 +4,84 @@
 
   <style>
     .hbox {
-      display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-flex-direction: row;
-      -ms-flex-direction: row;
       flex-direction: row;
-      -webkit-align-content: flex-start;
-      -ms-flex-line-pack: start;
-      align-content: flex-start;
-      padding: 3px;
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 5px;
     }
 
     .vbox {
-      display: -webkit-flex;
-      display: -ms-flexbox;
+      width: 250px;
       display: flex;
-      /*Align children vetically*/
-      -webkit-flex-direction: column;
-      -ms-flex-direction: column;
       flex-direction: column;
-      -webkit-align-content: flex-start;
-      -ms-flex-line-pack: start;
-      align-content: flex-start;
-    }
-
-    .formEntry {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      align-items: center;
     }
 
     .button {
       margin: 10px;
       width: 120px;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      background: rgb(65, 105, 225, 1);
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgb(65, 105, 225, 0.5);
+    }
+
+    .text {
+      width: 100px;
+      font-size: 12px;
+      font-family: Arial;
+    }
+
+    .textTitle {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: Arial;
     }
 
     .input {
-      width: 120px;
-      margin-left: 10px;
+      width: 100px;
+      height: 28px;
+      line-height: 28px;
+      padding: 0 1rem;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      outline: none;
+      background-color: #f3f3f4;
+      color: #0d0c22;
+      transition: .3s ease;
+    }
+
+    .input:focus,
+    input:hover {
+      outline: none;
+      border-color: rgb(65, 105, 225, 1);
+      background-color: #fff;
+      box-shadow: rgb(65, 105, 225, 1);
     }
   </style>
 
-  <h1>Clictrans</h1>
-  <p>Pricing support</p>
+  <div class="textTitle">
+    <p>Clictrans</p>
+  </div>
 
   <div class="vbox" name="vboxEntry">
     <div class="hbox" name="hboxRate">
-      <text>Rate [EUR]:</text>
+      <div class="text">
+        <p>Rate [EUR]</p>
+      </div>
       <input class="input" type="number" name="rateRame" value=0.8 min=0</input>
     </div>
     <div class="hbox" name="hboxWeight">
-      <text>Rate [EUR]:</text>
+      <div class="text">
+        <p>Weight [KG]</p>
+      </div>
       <input class="input" type="number" name="weightName" value=1400 min=0</input>
     </div>
     <button class="button">Calculate</button>
@@ -62,18 +89,25 @@
 
   <div class="vbox" name="Output">
     <div class="hbox" name="shipPriceMin">
-      <text>Min (-20%)</text>
-      <input class="input" type="text" name="inputShipPriceMin" </input>
+      <div class="text">
+        <p>Min (-20%)</p>
+      </div>
+      <input class="input" type="text" name="inputShipPriceMin" readonly </input>
     </div>
     <div class="hbox" name="shipPriceCalc">
-      <text>Calculated</text>
-      <input class="input" type="text" name="inputShipPriceCalc" </input>
+      <div class="text">
+        <p>Calculated</p>
+      </div>
+      <input class="input" type="text" name="inputShipPriceCalc" readonly </input>
     </div>
     <div class="hbox" name="shipPriceMax">
-      <text>Max (+20%)</text>
-      <input class="input" type="text" name="inputShipPriceMax" </input>
+      <div class="text">
+        <p>Max (+20%)</p>
+      </div>
+      <input class="input" type="text" name="inputShipPriceMax" readonly </input>
     </div>
   </div>
+  
 
   <script src="popup.js"></script>
 
