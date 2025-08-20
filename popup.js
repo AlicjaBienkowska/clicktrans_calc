@@ -16,8 +16,8 @@ function calculate() {
   let amountValue = convert_to_number(amountText);
   let distanceValue = convert_to_number(distanceText);
 
-    // Comment : Check cost
-  let costPerKmEUR = 0.8;
+  // Comment : Check cost
+  let costPerKmEUR = 0.4;
   let costPerKmEURInput = document.getElementById("costInput").value;
   let costPerKmEURInputValue = costPerKmEURInput
     ? Number(costPerKmEURInput)
@@ -27,8 +27,6 @@ function calculate() {
   } else {
     document.getElementById("costInput").value = costPerKmEUR;
   }
-
-
 
   // Comment : Check number of places on truck
   let singlePlaceLimit = 1400;
@@ -41,7 +39,7 @@ function calculate() {
   } else {
     document.getElementById("weightInput").value = singlePlaceLimit;
   }
-  
+
   let numberOfPlaces = weightValue / singlePlaceLimit;
   numberOfPlaces = Math.ceil(numberOfPlaces);
 
@@ -61,17 +59,17 @@ function calculate() {
     numberOfPlaces * pricePerKmEUR * distanceValue
   );
 
-    const shippingCost = Math.round(
+  const shippingCost = Math.round(
     numberOfPlaces * costPerKmEUR * distanceValue
   );
 
   // Commenet : Set value in input fields
-    document.getElementById("inputShipCostCalc").value = shippingCost;
-    document.getElementById("inputShipPriceCalc").value = shippingPrice;
+  document.getElementById("inputShipCostCalc").value = shippingCost;
+  document.getElementById("inputShipPriceCalc").value = shippingPrice;
   document.getElementById("inputShipPriceMin").value =
-    Math.round(shippingPrice * 0.8 /10) *10;
+    Math.round((shippingPrice * 0.8) / 10) * 10;
   document.getElementById("inputShipPriceMax").value =
-    Math.round(shippingPrice * 1.2 / 10) *10;
+    Math.round((shippingPrice * 1.2) / 10) * 10;
 }
 
 function convert_to_number(initText) {
