@@ -12,29 +12,67 @@ function calculate() {
 
   // Comment : Convert weight to value
   // Comment : Remove letters and spaces
-  let weightValue = weightText.replace(/\D/g, "");
-  weightValue = weightValue.replace(/\s/g, "");
-  weightValue = Number(weightValue);
-
-  let amountValue = amountText.replace(/\D/g, "");
-  amountValue = amountValue.replace(/\s/g, "");
-  amountValue = Number(amountValue);
-
-  let distanceValue = distanceText.replace(/\D/g, "");
-  distanceValue = distanceValue.replace(/\s/g, "");
-  distanceValue = Number(distanceValue);
+  let weightValue = convert_to_number(weightText);
+  let amountValue = convert_to_number(amountText);
+  let distanceValue = convert_to_number(distanceText);
 
   // Comment : Calculate number of places on transport truck for calculation
   const singlePlaceLimit = 1400;
+
+  // Comment : Check if user gave weight
+  let singlePlaceLimitInput = document.getElementById("weightInput")[0]
+    .innerText;
+  let singlePlaceLimitInputValue = singlePlaceLimitInput
+    ? Number(singlePlaceLimitInput)
+    : 0;
+  if (singlePlaceLimitInputValue) {
+    singlePlaceLimit = singlePlaceLimitInputValue;
+  }
+
   let numberOfPlaces = weightValue / singlePlaceLimit;
   numberOfPlaces = Math.ceil(numberOfPlaces);
 
   // Comment : Calculate price
   const pricePerKmEUR = 0.8;
+
+  // Comment : Check if user gave price
+  let pricePerKmEURInput = document.getElementById("rateInput")[0].innerText;
+  let pricePerKmEURInputValue = pricePerKmEURInput
+    ? Number(pricePerKmEURInput)
+    : 0;
+  if (pricePerKmEURInputValue) {
+    pricePerKmEUR = pricePerKmEURInputValue;
+  }
+
   const shippingPrice = Math.round(
     numberOfPlaces * pricePerKmEUR * distanceValue
   );
 
   console.log("Simulated Price");
   console.log(shippingPrice);
+
+  // Commenet : Set value in input fields
+  let inputShipPriceMin = document.getElementById("inputShipPriceMin")[0]
+    .innerText;
+  let inputShipPriceCalc = document.getElementById("inputShipPriceCalc")[0]
+    .innerText;
+  let inputShipPriceMax = document.getElementById("inputShipPriceMax")[0]
+    .innerText;
+}
+
+function convert_to_number(initText) {
+  let convertedNum = 0;
+
+  let preparedText = initText.replace(/\D/g, "");
+  preparedText = preparedText.replace(/\s/g, "");
+
+  if (preparedText.length > 0) {
+    preparedText = Number(preparedText);
+  }
+
+  if (preparedText) {
+    convertedNum = preparedText;
+  }
+
+  return convertedNum;
 }
