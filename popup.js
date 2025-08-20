@@ -1,5 +1,7 @@
 document.getElementById("buttonCalculate").addEventListener("click", calculate);
 
+calculate()
+
 function calculate() {
   // Comment : Get page content
   // const weightText = document.getElementsByClassName("weight")[0].innerText;
