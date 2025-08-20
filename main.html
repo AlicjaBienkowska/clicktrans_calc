@@ -9,7 +9,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-bottom: 2px;
+      margin-bottom: 5px;
     }
 
     .vbox {
@@ -17,10 +17,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: rgb(240,237,236);
-      margin-bottom : 5px;
+      background-color: rgb(240, 237, 236);
+      margin-bottom: 5px;
       padding: 10px;
-      border-radius : 10px;  
+      border-radius: 10px;
     }
 
     .button {
@@ -52,6 +52,12 @@
       color: rgb(2, 54, 83, 1);
     }
 
+    .textSubTitle {
+      font-size: 12px;
+      font-family: Arial;
+      color: rgb(2, 54, 83, 1);
+    }
+
     .input {
       width: 100px;
       height: 28px;
@@ -77,43 +83,75 @@
   <div class="vbox" name="vboxTitle">
     <div class="hbox" name="hboxTitle">
       <div class="textTitle">
-        <p>Clictrans</p>
+        <text>Clicktrans</text>
+      </div>
+    </div>
+    <div class="hbox" name="hboxTitle">
+      <div class="textSubTitle">
+        <text>Calculate price based on input indicators</text>
       </div>
     </div>
   </div>
 
   <div class="vbox" name="vboxEntry">
+    <div class="hbox" name="hboxTitle">
+      <div class="textSubTitle">
+        <text>Input indicators</text>
+      </div>
+    </div>
+
+    <div class="hbox" name="hboxCost">
+      <div class="text">
+        <text>Cost</text>
+      </div>
+      <input class="input" id="costInput" type="number" name="costInput" step="0.01" lang="en" min="0" value="0.40" </input>
+    </div>
+
     <div class="hbox" name="hboxRate">
       <div class="text">
-        <p>Rate (EUR)</p>
+        <text>Price</text>
       </div>
       <input class="input" id="rateInput" type="number" name="rateInput" step="0.01" lang="en" min="0" value="0.80" </input>
     </div>
+
     <div class="hbox" name="hboxWeight">
       <div class="text">
-        <p>Weight (KG)</p>
+        <text>Weight (KG)</text>
       </div>
-      <input class="input" id="weightInput" type="number" name="weightInput" value=1400 min=0</input>
+      <input class="input" id="weightInput" type="number" name="weightInput" value="1400" min="0" </input>
     </div>
+
     <button id="buttonCalculate" class="button">Calculate</button>
   </div>
 
   <div class="vbox" name="vboxOutput">
-    <div class="hbox" name="shipPriceMin">
-      <div class="text">
-        <p>Min (-20%)</p>
+    <div class="hbox" name="hboxTitle">
+      <div class="textSubTitle">
+        <text>Result</text>
       </div>
-      <input class="input" type="text" id="inputShipPriceMin" name="inputShipPriceMin" readonly </input>
+    </div>
+    <div class="hbox" name="shipCost">
+      <div class="text">
+        <text>Cost</text>
+      </div>
+      <input class="input" type="text" id="inpuShipCost" name="inpuShipCost" readonly </input>
     </div>
     <div class="hbox" name="shipPriceCalc">
       <div class="text">
-        <p>Calculated</p>
+        <text>Calculated</text>
       </div>
       <input class="input" type="text" id="inputShipPriceCalc" name="inputShipPriceCalc" readonly </input>
     </div>
+    <div class="hbox" name="shipPriceMin">
+      <div class="text">
+        <text>Min (-20%)</text>
+      </div>
+      <input class="input" type="text" id="inputShipPriceMin" name="inputShipPriceMin" readonly </input>
+    </div>
+
     <div class="hbox" name="shipPriceMax">
       <div class="text">
-        <p>Max (+20%)</p>
+        <text>Max (+20%)</text>
       </div>
       <input class="input" type="text" id="inputShipPriceMax" name="inputShipPriceMax" readonly </input>
     </div>
