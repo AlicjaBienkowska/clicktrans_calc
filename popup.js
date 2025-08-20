@@ -47,14 +47,12 @@ function calculate() {
     numberOfPlaces * pricePerKmEUR * distanceValue
   );
 
-  console.log("Simulated Price");
-  console.log(shippingPrice);
-
   // Commenet : Set value in input fields
- document.getElementById("inputShipPriceMin").setValue = "Test";
-document.getElementById("inputShipPriceCalc").setValue = "Test";
-document.getElementById("inputShipPriceMax").setValue = "Test";
-
+  document.getElementById("inputShipPriceMin").value =
+    Math.round(shippingPrice * 0.8 * 100) / 100;
+  document.getElementById("inputShipPriceCalc").value = shippingPrice;
+  document.getElementById("inputShipPriceMax").value =
+    Math.round(shippingPrice * 1, 2 * 100) / 100;
 }
 
 function convert_to_number(initText) {
