@@ -17,7 +17,7 @@ function calculate() {
   let distanceValue = convert_to_number(distanceText);
 
   // Comment : Calculate number of places on transport truck for calculation
-  const singlePlaceLimit = 1400;
+  let singlePlaceLimit = 1400;
 
   // Comment : Check if user gave weight
   let singlePlaceLimitInput = document.getElementById("weightInput").value;
@@ -32,7 +32,7 @@ function calculate() {
   numberOfPlaces = Math.ceil(numberOfPlaces);
 
   // Comment : Calculate price
-  const pricePerKmEUR = 0.8;
+  let pricePerKmEUR = 0.8;
 
   // Comment : Check if user gave price
   let pricePerKmEURInput = document.getElementById("rateInput").value;
