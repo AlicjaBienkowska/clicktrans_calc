@@ -1,3 +1,7 @@
+
+document.getElementById("buttonCalculate").addEventListener("click", calculate);
+
+function calculate(){
 // Comment : Get page content 
 // const weightText = document.getElementsByClassName("weight")[0].innerText;
 // const amountText = document.getElementsByClassName("amount")[0].innerText;
@@ -32,4 +36,8 @@ const shippingPrice = Math.round(numberOfPlaces * pricePerKmEUR * distanceValue)
 
 console.log("Simulated Price");
 console.log(shippingPrice)
+}
+
+
+
 
