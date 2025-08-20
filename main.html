@@ -78,13 +78,13 @@
       <div class="text">
         <p>Rate [EUR]</p>
       </div>
-      <input class="input" type="number" name="rateRame" step="0.01" lang="en" min="0" value="0.80" </input>
+      <input class="input" id="rateInput" type="number" name="rateInput" step="0.01" lang="en" min="0" value="0.80" </input>
     </div>
     <div class="hbox" name="hboxWeight">
       <div class="text">
         <p>Weight [KG]</p>
       </div>
-      <input class="input" type="number" name="weightName" value=1400 min=0</input>
+      <input class="input" id="weighInput" type="number" name="weighInput" value=1400 min=0</input>
     </div>
     <button id="buttonCalculate" class="button">Calculate</button>
   </div>
@@ -94,19 +94,19 @@
       <div class="text">
         <p>Min (-20%)</p>
       </div>
-      <input class="input" type="text" name="inputShipPriceMin" readonly </input>
+      <input class="input" type="text" id="inputShipPriceMin" name="inputShipPriceMin" readonly </input>
     </div>
     <div class="hbox" name="shipPriceCalc">
       <div class="text">
         <p>Calculated</p>
       </div>
-      <input class="input" type="text" name="inputShipPriceCalc" readonly </input>
+      <input class="input" type="text" id="inputShipPriceCalc"name="inputShipPriceCalc" readonly </input>
     </div>
     <div class="hbox" name="shipPriceMax">
       <div class="text">
         <p>Max (+20%)</p>
       </div>
-      <input class="input" type="text" name="inputShipPriceMax" readonly </input>
+      <input class="input" type="text" id="inputShipPriceMax" name="inputShipPriceMax" readonly </input>
     </div>
   </div>
 
