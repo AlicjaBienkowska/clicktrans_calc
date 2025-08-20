@@ -52,7 +52,7 @@ function calculate() {
     Math.round(shippingPrice * 0.8 /10) *10;
   document.getElementById("inputShipPriceCalc").value = shippingPrice;
   document.getElementById("inputShipPriceMax").value =
-    Math.round(shippingPrice * 1.2 / 10) / *10;
+    Math.round(shippingPrice * 1.2 / 10) *10;
 }
 
 function convert_to_number(initText) {
