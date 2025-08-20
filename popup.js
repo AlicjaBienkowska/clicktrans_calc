@@ -55,21 +55,30 @@ function calculate() {
     document.getElementById("rateInput").value = pricePerKmEUR;
   }
 
-  const shippingPrice = Math.round(
-    numberOfPlaces * pricePerKmEUR * distanceValue
-  );
-
+  const shippingPrice =
+    Math.round((numberOfPlaces * pricePerKmEUR * distanceValue) / 10) * 10;
   const shippingCost = Math.round(
     numberOfPlaces * costPerKmEUR * distanceValue
   );
+  const shippingPriceMin =
+    Math.round((numberOfPlaces * pricePerKmEUR * distanceValue * 0.8) / 10) *
+    10;
+  const shippingPriceMax =
+    Math.round((numberOfPlaces * pricePerKmEUR * distanceValue * 1.2) / 10) *
+    10;
+
+  const diffPrice = shippingPrice - shippingCost;
+  const diffPriceMin = shippingPriceMin - shippingCost;
+  const diffPriceMax = shippingPriceMax - shippingCost;
 
   // Commenet : Set value in input fields
   document.getElementById("inputShipCostCalc").value = shippingCost;
   document.getElementById("inputShipPriceCalc").value = shippingPrice;
-  document.getElementById("inputShipPriceMin").value =
-    Math.round((shippingPrice * 0.8) / 10) * 10;
-  document.getElementById("inputShipPriceMax").value =
-    Math.round((shippingPrice * 1.2) / 10) * 10;
+  document.getElementById("inputShipPriceMin").value = shippingPriceMin;
+  document.getElementById("inputShipPriceMax").value = shippingPriceMax;
+  document.getElementById("inputDiffShipPriceCalc").value = diffPrice;
+  document.getElementById("inputDiffShipPriceMin").value = diffPriceMin;
+  document.getElementById("inputDiffShipPriceMax").value = diffPriceMax;
 }
 
 function convert_to_number(initText) {
