@@ -4,7 +4,7 @@
 
   <style>
     .hbox {
-      width : 100%;
+      width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -17,10 +17,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: rgb(240,237,236);
+      margin-bottom : 5px;
+      padding: 10px;
+      border-radius : 10px;  
     }
 
     .button {
-      margin: 10px;
+      margin-top: 5px;
       width: 120px;
       height: 30px;
       border-radius: 10px;
@@ -56,7 +60,7 @@
       border: 2px solid transparent;
       border-radius: 8px;
       outline: none;
-      background-color: #f3f3f4;
+      background-color: white;
       color: #0d0c22;
       transition: .3s ease;
     }
@@ -70,10 +74,12 @@
     }
   </style>
 
-  <div class="hbox" name="hboxTitle">
+  <div class="vbox" name="vboxTitle">
+    <div class="hbox" name="hboxTitle">
       <div class="textTitle">
-    <p>Clictrans</p>
-  </div>
+        <p>Clictrans</p>
+      </div>
+    </div>
   </div>
 
   <div class="vbox" name="vboxEntry">
@@ -92,7 +98,7 @@
     <button id="buttonCalculate" class="button">Calculate</button>
   </div>
 
-  <div class="vbox" name="Output">
+  <div class="vbox" name="vboxOutput">
     <div class="hbox" name="shipPriceMin">
       <div class="text">
         <p>Min (-20%)</p>
@@ -103,7 +109,7 @@
       <div class="text">
         <p>Calculated</p>
       </div>
-      <input class="input" type="text" id="inputShipPriceCalc"name="inputShipPriceCalc" readonly </input>
+      <input class="input" type="text" id="inputShipPriceCalc" name="inputShipPriceCalc" readonly </input>
     </div>
     <div class="hbox" name="shipPriceMax">
       <div class="text">
