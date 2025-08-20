@@ -20,8 +20,7 @@ function calculate() {
   const singlePlaceLimit = 1400;
 
   // Comment : Check if user gave weight
-  let singlePlaceLimitInput = document.getElementById("weightInput")[0]
-    .innerText;
+  let singlePlaceLimitInput = document.getElementById("weightInput").innerText;
   let singlePlaceLimitInputValue = singlePlaceLimitInput
     ? Number(singlePlaceLimitInput)
     : 0;
@@ -36,7 +35,7 @@ function calculate() {
   const pricePerKmEUR = 0.8;
 
   // Comment : Check if user gave price
-  let pricePerKmEURInput = document.getElementById("rateInput")[0].innerText;
+  let pricePerKmEURInput = document.getElementById("rateInput").innerText;
   let pricePerKmEURInputValue = pricePerKmEURInput
     ? Number(pricePerKmEURInput)
     : 0;
@@ -52,12 +51,10 @@ function calculate() {
   console.log(shippingPrice);
 
   // Commenet : Set value in input fields
-  let inputShipPriceMin = document.getElementById("inputShipPriceMin")[0]
-    .innerText;
-  let inputShipPriceCalc = document.getElementById("inputShipPriceCalc")[0]
-    .innerText;
-  let inputShipPriceMax = document.getElementById("inputShipPriceMax")[0]
-    .innerText;
+ document.getElementById("inputShipPriceMin").setInnerText = "Test";
+document.getElementById("inputShipPriceCalc").setInnerText = "Test";
+document.getElementById("inputShipPriceMax").setInnerText = "Test";
+
 }
 
 function convert_to_number(initText) {
