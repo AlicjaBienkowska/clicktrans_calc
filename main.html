@@ -3,7 +3,7 @@
 <body>
 
   <style>
-    .hbox {
+    .hboxCenter {
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -12,8 +12,17 @@
       margin-bottom: 5px;
     }
 
+    .hboxStart {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
     .vbox {
-      width: 230px;
+      width: 280px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -59,9 +68,9 @@
     }
 
     .input {
-      width: 100px;
-      height: 28px;
-      line-height: 28px;
+      width: 50px;
+      height: 25px;
+      line-height: 25px;
       padding: 0 1rem;
       border: 2px solid transparent;
       border-radius: 8px;
@@ -69,6 +78,20 @@
       background-color: white;
       color: #0d0c22;
       transition: .3s ease;
+    }
+
+    .inputDiff {
+      width: 35px;
+      height: 25px;
+      line-height: 25px;
+      padding: 0 1rem;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      outline: none;
+      background-color: white;
+      color: #0d0c22;
+      transition: .3s ease;
+      margin-left: 5px;
     }
 
     .input:focus,
@@ -81,12 +104,12 @@
   </style>
 
   <div class="vbox" name="vboxTitle">
-    <div class="hbox" name="hboxTitle">
+    <div class="hboxCenter" name="hboxTitle">
       <div class="textTitle">
         <text>Clicktrans</text>
       </div>
     </div>
-    <div class="hbox" name="hboxTitle">
+    <div class="hboxCenter" name="hboxTitle">
       <div class="textSubTitle">
         <text>Calculate price based on input indicators</text>
       </div>
@@ -94,27 +117,27 @@
   </div>
 
   <div class="vbox" name="vboxEntry">
-    <div class="hbox" name="hboxTitle">
+    <div class="hboxCenter" name="hboxTitle">
       <div class="textSubTitle">
         <text>Input indicators</text>
       </div>
     </div>
 
-    <div class="hbox" name="hboxCost">
+    <div class="hboxStart" name="hboxCost">
       <div class="text">
         <text>Cost</text>
       </div>
       <input class="input" id="costInput" type="number" name="costInput" step="0.01" lang="en" min="0" value="0.40" </input>
     </div>
 
-    <div class="hbox" name="hboxRate">
+    <div class="hboxStart" name="hboxRate">
       <div class="text">
         <text>Price</text>
       </div>
       <input class="input" id="rateInput" type="number" name="rateInput" step="0.01" lang="en" min="0" value="0.80" </input>
     </div>
 
-    <div class="hbox" name="hboxWeight">
+    <div class="hboxStart" name="hboxWeight">
       <div class="text">
         <text>Weight (KG)</text>
       </div>
@@ -125,36 +148,39 @@
   </div>
 
   <div class="vbox" name="vboxOutput">
-    <div class="hbox" name="hboxTitle">
+    <div class="hboxCenter" name="hboxTitle">
       <div class="textSubTitle">
         <text>Result</text>
       </div>
     </div>
-    <div class="hbox" name="shipCost">
+    <div class="hboxStart" name="shipCost">
       <div class="text">
         <text>Cost</text>
       </div>
       <input class="input" type="text" id="inputShipCostCalc" name="inputShipCostCalc" readonly </input>
 
     </div>
-    <div class="hbox" name="shipPriceCalc">
+    <div class="hboxStart" name="shipPriceCalc">
       <div class="text">
         <text>Calculated</text>
       </div>
       <input class="input" type="text" id="inputShipPriceCalc" name="inputShipPriceCalc" readonly </input>
+      <input class="inputDiff" type="text" id="inputDiffShipPriceCalc" name="inputDiffShipPriceCalc" placeholder="Diff" readonly </input>
     </div>
-    <div class="hbox" name="shipPriceMin">
+    <div class="hboxStart" name="shipPriceMin">
       <div class="text">
         <text>Min (-20%)</text>
       </div>
       <input class="input" type="text" id="inputShipPriceMin" name="inputShipPriceMin" readonly </input>
+      <input class="inputDiff" type="text" id="inputDiffShipPriceMin" name="inputDiffShipPriceMin" placeholder="Diff" readonly </input>
     </div>
 
-    <div class="hbox" name="shipPriceMax">
+    <div class="hboxStart" name="shipPriceMax">
       <div class="text">
         <text>Max (+20%)</text>
       </div>
       <input class="input" type="text" id="inputShipPriceMax" name="inputShipPriceMax" readonly </input>
+      <input class="inputDiff" type="text" id="inputDiffShipPriceMax" name="inputDiffShipPriceMax" placeholder="Diff" readonly </input>
     </div>
   </div>
 
