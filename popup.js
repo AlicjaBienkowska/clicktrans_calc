@@ -4,15 +4,17 @@ calculate()
 
 function calculate() {
   // Comment : Get page content
-  // const weightText = document.getElementsByClassName("weight")[0].innerText;
-  // const amountText = document.getElementsByClassName("amount")[0].innerText;
-  // const distanceText = document.getElementsByClassName("distance")[0].children[1].innerText;
+  const weightText = document.getElementsByClassName("weight")[0].innerText;
+  const amountText = document.getElementsByClassName("amount")[0].innerText;
+  const distanceText = document.getElementsByClassName("distance")[0].children[1].innerText;
 
-  const weightText = "ok. 1030 kg";
-  const amountText = "2";
-  const distanceText = "635 km";
+  if (weightText && amountText && distanceText){
+    
+  // const weightText = "ok. 1030 kg";
+  // const amountText = "2";
+  // const distanceText = "635 km";
 
-  // Comment : Convert weight to value
+// Comment : Convert weight to value
   // Comment : Remove letters and spaces
   let weightValue = convert_to_number(weightText);
   let amountValue = convert_to_number(amountText);
@@ -81,6 +83,12 @@ function calculate() {
   document.getElementById("inputDiffShipPriceCalc").value = diffPrice;
   document.getElementById("inputDiffShipPriceMin").value = diffPriceMin;
   document.getElementById("inputDiffShipPriceMax").value = diffPriceMax;
+    
+  }
+
+
+
+  
 }
 
 function convert_to_number(initText) {
