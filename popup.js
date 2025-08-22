@@ -9,12 +9,20 @@ calculate();
 
 function calculate() {
   // Comment : Get page content
-  const weightText = document.getElementsByClassName("weight")[0].innerText;
+
+    const weightTextEl = document.getElementsByClassName("weight")
+  const amountTextEl = document.getElementsByClassName("amount")
+  const distanceTextEl = document.getElementsByClassName("distance")
+
+  
+
+
+  if (weightTextEl.length >0 && amountTextEl.length > 0 && distanceTextEl.length > 0) {
+
+      const weightText = document.getElementsByClassName("weight")[0].innerText;
   const amountText = document.getElementsByClassName("amount")[0].innerText;
   const distanceText = document.getElementsByClassName("distance")[0]
     .children[1].innerText;
-
-  if (weightText && amountText && distanceText) {
     // const weightText = "ok. 1030 kg";
     // const amountText = "2";
     // const distanceText = "635 km";
@@ -110,9 +118,9 @@ function clear_values() {
   document.getElementById("inputDiffShipPriceMin").value = "";
   document.getElementById("inputDiffShipPriceMax").value = "";
 
-  document.getElementById("textInfoWeight").innerText = "";
-  document.getElementById("textInfoAmount").innerText = "";
-  document.getElementById("textInfoDistance").innerText = "";
+  document.getElementById("textInfoWeight").innerText = "Weight: ";
+  document.getElementById("textInfoAmount").innerText = "Amount: ";
+  document.getElementById("textInfoDistance").innerText = "Distance: ";
 }
 
 
