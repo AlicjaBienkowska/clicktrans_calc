@@ -1,6 +1,11 @@
 document.getElementById("buttonCalculate").addEventListener("click", calculate);
 
+
+clear_values()
 calculate();
+
+
+//**********************************************//
 
 function calculate() {
   // Comment : Get page content
@@ -95,6 +100,21 @@ function calculate() {
     ).innerText = `Distance: ${distanceValue.toLocaleString()}`;
   }
 }
+
+function clear_values() {
+  document.getElementById("inputShipCostCalc").value = "";
+  document.getElementById("inputShipPriceCalc").value = "";
+  document.getElementById("inputShipPriceMin").value = "";
+  document.getElementById("inputShipPriceMax").value = "";
+  document.getElementById("inputDiffShipPriceCalc").value = "";
+  document.getElementById("inputDiffShipPriceMin").value = "";
+  document.getElementById("inputDiffShipPriceMax").value = "";
+
+  document.getElementById("textInfoWeight").innerText = "";
+  document.getElementById("textInfoAmount").innerText = "";
+  document.getElementById("textInfoDistance").innerText = "";
+}
+
 
 function convert_to_number(initText) {
   let convertedNum = 0;
